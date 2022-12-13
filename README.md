@@ -32,6 +32,7 @@ POSTGRES_PASSWORD=postgres
 DB_HOST=db 
 DB_PORT=5432
 CELERY_BROKER=redis://redis:6379/0
+DEBUG=True
 ```
 
 ### Запуск приложения

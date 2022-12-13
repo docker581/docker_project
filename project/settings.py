@@ -25,10 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', default=get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = int(os.environ.get('DEBUG', default=0))
+DEBUG = os.environ.get('DEBUG', default=False)
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -39,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +134,10 @@ CELERY_BROKER_URL = os.environ.get("CELERY_BROKER", "redis://redis:6379/0")
 CELERY_RESULT_BACKEND = os.environ.get("CELERY_BROKER", "redis://redis:6379/0")
 CELERY_TIMEZONE = TIME_ZONE
 CELERY_ENABLE_UTC = False
+
+# csrf settings 
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1']
+CSRF_COOKIE_SECURE = False
+
+# admin settings
+ACCOUNT_EMAIL_VERIFICATION = 'none'
