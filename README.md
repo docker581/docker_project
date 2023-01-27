@@ -1,4 +1,4 @@
-# celery_project
+# docker_project
 
 ## Описание
 Развертывание Celery с Redis (+ Django и Postgres) в Docker  
